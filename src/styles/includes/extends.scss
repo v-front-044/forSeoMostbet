@@ -1,0 +1,231 @@
+// Шаблони (заготівлі)
+// @extend %ім'я шаблону;
+// Сніппет (SCSS): ex
+
+// Стилі для чуйних зображеннь (IBG)
+%ibg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// Лічильник для списку
+%listCounter {
+	list-style-type: none;
+	counter-reset: item;
+
+	li {
+		position: relative;
+
+		&:before {
+			counter-increment: item;
+			content: counter(item);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+// Адаптивне відео
+%responsiveVideo {
+
+	video,
+	iframe,
+	object,
+	embed {
+		aspect-ratio: 16 / 9;
+	}
+}
+
+// Відео як фон
+%videoBackground {
+
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		object-fit: cover;
+	}
+}
+
+// Сірий фільтр
+%grayfilter {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}
+
+// Скасувати виділення
+%noselect {
+	user-select: none;
+}
+
+// Дзеркальне відображення
+%mirror {
+	transform: scale(-1, 1);
+}
+
+// Плавний скролл
+%smoothscroll {
+	-webkit-overflow-scrolling: touch;
+}
+
+// Сховати скролл
+%hidescroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+%flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+%flex-sb {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+%button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 8px 24px;
+	color: #fff;
+	font-weight: 500;
+	line-height: 150%;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	transition: background-color .3s ease-in-out;
+}
+
+%buttonColorRed {
+	background-color: #FF2400;
+	border-color: #FF2400;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #da1d00;
+		}
+	}
+}
+
+%buttonColorBlack {
+	background-color: #000;
+	border-color: #FF2400;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #FF2400;
+		}
+	}
+}
+
+%paddingBlock {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+%title {
+	color: #D2EEED;
+	text-align: center;
+	font-weight: 700;
+	line-height: 100%;
+	text-transform: uppercase;
+}
+
+%subtitle {
+	color: #D2EEED;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 100%;
+}
+
+%titleEffect {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&::before {
+		position: absolute;
+		content: '';
+		bottom: -4px;
+		left: 50%;
+		width: 112px;
+		height: 3px;
+		border-radius: 100px;
+		transform: translateX(-50%);
+	}
+}
+
+%titleEffectGreen {
+	&::after {
+		background: url('../../assets/img/blur/blur-green.png') center/cover no-repeat;
+	}
+
+	&::before {
+		background-color: #04CFAA;
+	}
+}
+
+%titleEffectRed {
+	&::after {
+		background: url('../../assets/img/blur/blur-red.png') center/cover no-repeat;
+	}
+
+	&::before {
+		background-color: #FF2400;
+	}
+}
+
+%titleEffectWhite {
+	&::after {
+		background: url('../../assets/img/blur/blur-white.png') center/cover no-repeat;
+	}
+
+	&::before {
+		background-color: #fff;
+	}
+}
+
+%titleEffectBlue {
+	&::after {
+		background: url('../../assets/img/blur/blur-blue.png') center/cover no-repeat;
+	}
+
+	&::before {
+		background-color: #00B2FF;
+	}
+}

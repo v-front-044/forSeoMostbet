@@ -1,0 +1,476 @@
+.page {
+
+   @media (max-width:toEm($sidebarNone)) {
+      padding-top: 46px;
+   }
+}
+
+
+.hero {
+   padding-top: 50px;
+   padding-bottom: 40px;
+
+   @media (max-width:toEm($mobile)) {
+      padding-top: 30px;
+      padding-bottom: 20px;
+   }
+
+   &__container {}
+
+   &__title {
+      @include adaptiveValue("font-size", 48, 24);
+      @extend %title;
+      @extend %titleEffect;
+      @extend %titleEffectGreen;
+   }
+
+   &__body {
+      margin-top: 50px;
+      padding: 32px 8px;
+      @extend %flex-sb;
+      gap: 48px;
+
+      @media (max-width:toEm($sidebarNone)) {
+         gap: 24px;
+      }
+
+      @media (max-width:toEm($mobile)) {
+         flex-direction: column;
+         margin-top: 25px;
+      }
+   }
+
+   &__block {
+      padding: 32px;
+      border-radius: 16px;
+      width: 100%;
+      background-color: transparent;
+      font-style: italic;
+      position: relative;
+
+      &::after,
+      &::before {
+         position: absolute;
+         content: '';
+         bottom: 0;
+         right: 0;
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+
+      &::before {
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         border-radius: 16px;
+      }
+
+      &:nth-child(1) {
+         background-image: linear-gradient(300deg, #FF0000 5%, #031717 80%);
+
+         &::after {
+            background-image: url('../../../assets/img/hero/girl-1.png');
+         }
+
+         &::before {
+            background-image: url('../../../assets/img/hero/bg-1.png');
+         }
+
+         & .hero__percent {
+            color: #FFC700;
+         }
+      }
+
+      &::after {
+         width: 310px;
+         height: 352px;
+         z-index: 2;
+
+         @media (max-width:toEm($tablet)) {
+            right: -10%;
+            width: 280px;
+            height: 320px;
+         }
+
+         @media (max-width:toEm($mobile)) {
+            right: 0 !important;
+            width: 220px !important;
+            height: 250px !important;
+         }
+      }
+
+      &:nth-child(2) {
+         background-image: linear-gradient(300deg, rgba(0, 255, 178, 0.5) 5%, #031717 85%);
+         box-shadow: 0px 0px 2px 0px #00FFB2 inset;
+
+         &::after {
+            background-image: url('../../../assets/img/hero/girl-2.png');
+         }
+
+         &::before {
+            background-image: url('../../../assets/img/hero/bg-2.png');
+            box-shadow: 0px 0px 2px 0px #00FFB2 inset;
+            z-index: -1;
+         }
+      }
+
+      @media (max-width:toEm($mobile)) {
+         padding: 16px;
+      }
+   }
+
+   &__wrap {
+      position: relative;
+      z-index: 3;
+      @extend %flex-column;
+      justify-content: space-between;
+      min-height: 256px;
+      font-weight: 700;
+
+      @media (max-width:toEm($mobile)) {
+         min-height: 200px;
+      }
+   }
+
+   &__block-text {
+      @extend %flex-column;
+
+      & .bold {
+         display: inline-block;
+         line-height: 120%;
+         @include adaptiveValue("font-size", 56, 28);
+      }
+
+      & .regular {
+         display: inline-block;
+         line-height: 120%;
+         @include adaptiveValue("font-size", 36, 18);
+         font-weight: 400;
+      }
+   }
+
+   &__text {
+      @include adaptiveValue("font-size", 32, 16);
+   }
+
+   &__percent {
+      @include adaptiveValue("font-size", 56, 28);
+   }
+
+   &__button {
+      @extend %button;
+      @extend %buttonColorRed;
+      max-width: 190px;
+      width: max-content;
+   }
+}
+
+
+.sport {
+   @extend %paddingBlock;
+
+   @media (max-width:toEm($mobile)) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+
+   &__container {}
+
+   &__wrap-text {
+      @extend %titleEffect;
+      @extend %titleEffectGreen;
+   }
+
+   &__title {
+      @include adaptiveValue("font-size", 48, 24);
+      @extend %title;
+   }
+
+   &__sub-title {
+      padding-block: 4px;
+      @extend %subtitle;
+   }
+
+   &__body {
+      margin-top: 30px;
+      @extend %flex-column;
+      align-items: center;
+   }
+
+   &__block {
+      text-align: center;
+      font-style: italic;
+   }
+
+   &__image {
+      max-width: 100%;
+      width: 100%;
+
+      img {
+         min-height: 220px;
+         object-position: center;
+         object-fit: cover;
+      }
+   }
+
+   &__bonus,
+   &__text {
+      margin-top: -35px;
+   }
+
+   &__bonus {
+      @include adaptiveValue("font-size", 28, 18);
+   }
+
+   &__text {
+      font-size: 16px;
+   }
+
+   &__button {
+      margin-top: 20px;
+      @extend %button;
+      @extend %buttonColorRed;
+      max-width: 360px;
+      width: 100%;
+   }
+}
+
+
+.games {
+   @extend %paddingBlock;
+
+   @media (max-width:toEm($mobile)) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+
+   &__container {}
+
+   &__wrap-text {
+      @extend %titleEffect;
+      @extend %titleEffectRed;
+   }
+
+   &__title {
+      @include adaptiveValue("font-size", 48, 24);
+      @extend %title;
+   }
+
+   &__sub-title {
+      padding-block: 4px;
+      @extend %subtitle;
+   }
+
+   &__body {
+      @extend %flex-column;
+      align-items: center;
+      gap: 10px;
+   }
+
+   &__buttons {
+      margin-top: 30px;
+      max-width: 300px;
+      width: 100%;
+      @extend %flex-sb;
+   }
+
+   &__link {
+      color: #D2EEED;
+      padding-bottom: 4px;
+      font-size: 14px;
+      transform: scale(1);
+      transition: transform .3s ease-in-out;
+
+      &:nth-child(1) {
+         font-size: 18px;
+         font-weight: 700;
+         border-bottom: 2px solid #FF0000;
+      }
+
+      &:not(:first-child) {
+         @media (any-hover: hover) {
+            &:hover {
+               font-weight: 700;
+               transform: scale(1.2);
+               color: #fff;
+            }
+         }
+      }
+   }
+
+   &__sort-btn {
+      @extend %button;
+      @extend %buttonColorBlack;
+      align-self: flex-end;
+   }
+
+   &__net {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+
+      @media (max-width:toEm($sidebarNone)) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (max-width:toEm($tablet)) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width:toEm($mobileSmall)) {
+         grid-template-columns: repeat(2, 1fr) !important;
+      }
+   }
+
+   &__block {
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform .3s ease-in-out;
+
+      img {
+         width: 100%;
+         height: 100%;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            transform: scale(1.05);
+         }
+      }
+   }
+}
+
+
+.category {
+   @extend %paddingBlock;
+
+   @media (max-width:toEm($mobile)) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+
+   &__container {}
+
+   &__wrap-text {
+      @extend %titleEffect;
+      @extend %titleEffectWhite;
+   }
+
+   &__title {
+      @include adaptiveValue("font-size", 48, 24);
+      @extend %title;
+   }
+
+   &__sub-title {
+      padding-block: 4px;
+      @extend %subtitle;
+   }
+
+   &__body {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+
+      @media (max-width:toEm($mobile)) {
+         grid-template-columns: 1fr 1fr;
+         row-gap: 24px;
+         column-gap: 8px;
+      }
+   }
+
+   &__link {
+      background-color: #031717;
+      border-radius: 4px;
+      padding: 16px;
+      @extend %flex-column;
+      align-items: center;
+      gap: 20px;
+
+      span {
+         text-align: center;
+         @include adaptiveValue("font-size", 26, 14);
+         font-weight: 900;
+         line-height: 120%;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: 0px 0px 2px 0px #00FFB2 inset;
+         }
+      }
+   }
+
+   &__image {
+      margin-top: -35px;
+   }
+
+   &__text {
+      margin-top: 45px;
+      color: #3B6F6D;
+      @include adaptiveValue("font-size", 32, 16);
+      font-weight: 700;
+
+      @media (max-width:toEm($mobile)) {
+         margin-top: 25px;
+      }
+   }
+}
+
+
+.platform {
+   @extend %paddingBlock;
+
+   @media (max-width:toEm($mobile)) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+
+   &__container {}
+
+   &__wrap-text {
+      @extend %titleEffect;
+      @extend %titleEffectBlue;
+   }
+
+   &__title {
+      @include adaptiveValue("font-size", 48, 24);
+      @extend %title;
+   }
+
+   &__sub-title {
+      padding-block: 4px;
+      @extend %subtitle;
+   }
+
+   &__body {
+      margin-top: 40px;
+      @extend %flex-column;
+      align-items: center;
+   }
+
+   &__image {
+      max-width: 718px;
+      width: 100%;
+   }
+
+   &__wrap {
+      margin-top: 30px;
+      @extend %flex-sb;
+      max-width: 480px;
+      width: 100%;
+
+      @media (max-width:toEm($mobileSmall)){
+         flex-direction: column;
+         gap: 20px;
+      }
+   }
+
+   &__qr {
+      width: 92px;
+      height: 92px;
+   }
+}
