@@ -1,3 +1,7 @@
+@font-face {font-family: Roboto;font-display: swap;src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2");font-weight: 400;font-style: normal;}
+@font-face {font-family: Roboto;font-display: swap;src: url("../assets/fonts/Roboto-Medium.woff2") format("woff2");font-weight: 500;font-style: normal;}
+@font-face {font-family: Roboto;font-display: swap;src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2");font-weight: 700;font-style: normal;}
+@font-face {font-family: Roboto;font-display: swap;src: url("../assets/fonts/Roboto-Black.woff2") format("woff2");font-weight: 900;font-style: normal;}
 * {
 	padding: 0rem;
 	margin: 0rem;
@@ -726,6 +730,33 @@ body {
   width: 5.75rem;
   height: 5.75rem;
 }
+
+.content {
+  margin-top: 0.9375rem;
+}
+.content__body {
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5625rem;
+  position: relative;
+}
+.content__body::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 50%;
+  width: 90%;
+  height: 0.25rem;
+  border-bottom-left-radius: 6.25rem;
+  border-bottom-right-radius: 6.25rem;
+  transform: translateX(-50%);
+}
+.content__body p {
+  font-weight: 500;
+  line-height: 120%;
+}
+.content__body p:not(:first-child) {
+  margin-top: 0.625rem;
+}
 @media (any-hover: hover) {
   .header__button--red:hover {
     background-color: #da1d00;
@@ -772,8 +803,7 @@ body {
   }
   .category__link:hover {
     box-shadow: 0rem 0rem 0.125rem 0rem #00FFB2 inset;
-  }
-}
+  }}
 @media (max-width: 74.99875em) {
   .header {
     min-height: 2.875rem;
@@ -801,8 +831,7 @@ body {
   }
   .games__net {
     grid-template-columns: repeat(4, 1fr);
-  }
-}
+  }}
 @media (max-width: 47.99875em) {
   .header__text {
     display: none;
@@ -858,8 +887,7 @@ body {
   .platform {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-  }
-}
+  }}
 @media (max-width: 29.99875em) {
   .header__buttons {
     margin-left: 0;
@@ -875,7 +903,9 @@ body {
     flex-direction: column;
     gap: 1.25rem;
   }
-}
+  .content__body {
+    padding: 0.9375rem 0.9375rem;
+  }}
 @media (max-width: 61.99875em) {
   .footer__wrap-menu {
     grid-template-columns: 1fr 1fr;
@@ -896,16 +926,14 @@ body {
   }
   .games__net {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
+  }}
 @media (max-width: 48rem) {
   .footer__container {
     grid-template-columns: 1fr;
   }
   .footer__section--providers, .footer__section--payments, .footer__section--apps {
     grid-column: span 1;
-  }
-}
+  }}
 @media (min-width: 108.75em) {
   .hero__title {
     font-size: 3rem;
@@ -943,7 +971,9 @@ body {
   .platform__title {
     font-size: 3rem;
   }
-}
+  .content__body p {
+    font-size: 1rem;
+  }}
 @media (min-width: 20em) and (max-width: 108.75em) {
   .hero__title {
     font-size: clamp( 1.5rem , 1.1619718309875rem  +  1.6901408451vw , 3rem );
@@ -981,7 +1011,9 @@ body {
   .platform__title {
     font-size: clamp( 1.5rem , 1.1619718309875rem  +  1.6901408451vw , 3rem );
   }
-}
+  .content__body p {
+    font-size: clamp( 0.875rem , 0.8468309859125rem  +  0.1408450704vw , 1rem );
+  }}
 @media (max-width: 20em) {
   .hero__title {
     font-size: 1.5rem;
@@ -1019,4 +1051,6 @@ body {
   .platform__title {
     font-size: 1.5rem;
   }
-}
+  .content__body p {
+    font-size: 0.875rem;
+  }}

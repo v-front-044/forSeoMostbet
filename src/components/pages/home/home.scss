@@ -474,3 +474,42 @@
       height: 92px;
    }
 }
+
+
+.content {
+   margin-top: 15px;
+
+   &__container {}
+
+   &__body {
+      border-radius: 12px;
+      padding: 20px 25px;
+      position: relative;
+
+      @media (max-width:toEm($mobileSmall)) {
+         padding: 15px 15px;
+      }
+
+      &::before {
+         position: absolute;
+         content: '';
+         top: 0;
+         left: 50%;
+         width: 90%;
+         height: 4px;
+         border-bottom-left-radius: 100px;
+         border-bottom-right-radius: 100px;
+         transform: translateX(-50%);
+      }
+
+      p {
+         @include adaptiveValue("font-size", 16, 14);
+         font-weight: 500;
+         line-height: 120%;
+
+         &:not(:first-child) {
+            margin-top: 10px;
+         }
+      }
+   }
+}
