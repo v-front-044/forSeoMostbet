@@ -77,14 +77,14 @@
 		}
 	}
 
-	&__clock,
-	&__lang {
-
-	}
-
 	&__lang {
 		@extend %flex-center;
 		gap: 10px;
+
+		img {
+			width: 20px;
+			height: 20px;
+		}
 	}
 
 	&__actions {
