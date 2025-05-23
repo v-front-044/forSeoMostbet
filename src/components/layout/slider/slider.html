@@ -1,20 +1,51 @@
-<div data-fls-slider class="block swiper">
-	<div class="block__wrapper swiper-wrapper">
-		<fetch url="@components/layout/slider/slides.json">
-			<each loop="item in response">
-				<include src="@components/layout/slider/slider-item.html" locals='{"item":[[item]]}'></include>
-			</each>
-		</fetch>
+<section class="slider">
+	<div data-fls-slider class="slider__container swiper">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide slider__slide">
+				<div class="slider__content">
+					<div class="slider__text">
+						<h2 class="slider__title">100 FREESPINŮ ZA INSTALACI APLIKACE</h2>
+						<p class="slider__description">Nainstalujte si aplikaci a získejte 100 FREESPINŮ po provedení
+							libovolného vkladu!</p>
+						<a href="#" class="slider__button">STÁHNOUT APLIKACI</a>
+					</div>
+					<div class="slider__image">
+						<img fetchpriority="high" src="@img/slider/slider_image_1.png" alt="App Promo 1">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide slider__slide">
+				<div class="slider__content">
+					<div class="slider__text">
+						<h2 class="slider__title">BONUS ZA KAŽDÝ VKLAD</h2>
+						<p class="slider__description">Navýšíme částku</p>
+						<a href="#" class="slider__button">VYZVEDNOUT BONUSY</a>
+					</div>
+					<div class="slider__image"><img fetchpriority="low" src="@img/slider/slider_image_2.png"
+							alt="App Promo 2"></div>
+				</div>
+			</div>
+			<div class="swiper-slide slider__slide">
+				<div class="slider__content">
+					<div class="slider__text">
+						<h2 class="slider__title">MOSTBET WELCOME BONUS</h2>
+						<p class="slider__description">Get 250 FS and 125% of the amount for your deposit</p>
+						<a href="#" class="slider__button">Learn More</a>
+					</div>
+					<div class="slider__image"><img fetchpriority="high" src="@img/slider/slider_image_3.png"
+							alt="App Promo 3"></div>
+				</div>
+			</div>
+			<div class="swiper-slide slider__slide">
+				<div class="slider__content">
+					<div class="slider__text">
+						<h2 class="slider__title">ZÍSKEJTE MAXIMUM</h2>
+						<p class="slider__description">Sbírejte mince a vyměňte je za skutečné peníze!</p>
+						<a href="#" class="slider__button">ZJISTIT VÍCE</a>
+					</div>
+					<div class="slider__image"><img src="@img/slider/slider_image_4.png" alt="App Promo 4"></div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-<div data-fls-slider class="block swiper">
-	<div class="block__wrapper swiper-wrapper">
-		<each loop="item in [
-				{'img':'@img/cover.jpg','title':'Title number one'},
-				{'img':'@img/cover.avif', 'title':'Title number two'},
-				{'img':'@img/cover.webp', 'title':'Title number three'}
-			]">
-			<include src="@components/layout/slider/slider-item.html" locals='{"item":[[item]]}'></include>
-		</each>
-	</div>
-</div>
+</section>

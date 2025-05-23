@@ -1,21 +1,3 @@
-const swiper = new Swiper(".slider__container", {
-   grabCursor: true,
-   spaceBetween: 20,
-   breakpoints: {
-      320: {
-         centeredSlides: false,
-         initialSlide: 0,
-         slidesPerView: 'auto',
-      },
-      1199.98: {
-         slidesPerView: 1.5,
-         centeredSlides: true,
-         initialSlide: 2,
-      }
-   }
-});
-
-
 const questions = document.querySelectorAll('.faq__question');
 
 questions.forEach((btn) => {
