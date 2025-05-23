@@ -1,214 +1,164 @@
 .footer {
-	color: #80858F;
-	font-size: 14px;
-	padding-top: 20px;
-	padding-bottom: 44px;
-
-	@media (max-width:toEm($mobile)) {
-		padding-bottom: 20px;
-	}
+	background-color: $darkBlue;
+	padding: 20px 0;
+	color: $mainColor;
+	border-radius: 15px 15px 0 0;
 
 	&__container {
-		
-	}
-
-	&__wrap-menu {
-		display: grid;
-		grid-template-columns: repeat(4, minmax(200px, 1fr));
-		gap: 32px;
-
-		@media (max-width:toEm($tablet)){
-			grid-template-columns: 1fr 1fr;
-			gap: 10px;
-		}
-	}
-
-	&__wrap-column {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(200px, 1fr));
-		gap: 32px;
-
-		@media (max-width:toEm($tablet)) {
-			grid-template-columns: 1fr 1fr;
-			gap: 10px;
-			margin-top: 10px;
-		}
-	}
-
-	&__section {
-		margin-top: 35px;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 15px;
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: 20px;
+	}
 
-		@media (max-width:toEm($tablet)){
-			margin-top: 20px;
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		&-img {
+			height: 30px;
 		}
 
-		&--promo .footer__list {
-			flex-direction: row;
-			gap: 40px;
-
-			@media (max-width:toEm($mobileSmall)){
-				flex-direction: column;
-				gap: 5px;
-			}
-
-			li {
-				list-style: none;
-			}
-		}
-
-		&--providers {
-			padding-bottom: 12px;
-			position: relative;
-
-			&::after {
-				position: absolute;
-				content: '';
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 1px;
-				background: linear-gradient(90deg, rgba(30, 35, 46, 0) 0%, rgba(128, 133, 143, .252417) 27.6%, rgba(128, 133, 143, .5) 52.62%, rgba(128, 133, 143, .291283) 74.48%, rgba(13, 16, 22, 0) 100%);
-			}
-		}
-
-		&--payments {
-			margin-top: 12px;
-		}
-
-		&--providers,
-		&--payments,
-		&--apps {
-			grid-column: span 2;
-		}
-
-		&--legal {
-			@extend %flex-sb;
-			flex-direction: row;
-			font-size: 12px;
-			margin-top: 40px;
-
-			@media (max-width:toEm($mobile)){
-				margin-top: 20px; 
-			}
-		}
-
-		&--apps {
-			text-align: center;
-			margin-top: 24px;
+		&__flag {
+			height: 20px;
 		}
 	}
 
-	&__title {
-		margin-bottom: 8px;
-		color: #fff;
-		font-size: 16px;
-		font-weight: 500;
-	}
-
-	&__list {
+	&__nav {
+		display: flex;
+		gap: 20px;
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 6px;
+
+		&-item {
+			color: $lightBlue;
+			font-weight: bold;
+			cursor: pointer;
+		}
 	}
 
-	&__item {
-		list-style: inside;
-		color: #80858F;
-		font-size: 12px;
+	&__age {
+		border: 1px solid $lightBlue;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+		font-weight: 600;
+		text-align: center;
+		line-height: 38px;
+		color: $lightBlue;
+	}
 
-		&-link {
-			text-decoration: none;
-			color: #a5d6d1;
-			transition: color 0.2s;
+	&__payments {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		gap: 15px;
+		background-color: #11457E;
+		padding: 10px 15px;
+		border-radius: 16px;
 
-			&:hover {
-				color: #ffffff;
+		&-icon {
+			height: 30px;
+		}
+	}
+
+	&__download {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+
+		&-btn {
+			background-color: #11457E;
+			color: $mainColor;
+			border-radius: 25px;
+			padding: 10px 20px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			border: none;
+		}
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		&--android {
+			background-image: url('/icons/android.svg');
+		}
+
+		&--apple {
+			background-image: url('/icons/apple.svg');
+		}
+	}
+
+	&__social {
+		display: flex;
+		justify-content: flex-end;
+		gap: 15px;
+
+		&-icon {
+			width: 20px;
+			height: 20px;
+			background-size: contain;
+
+			&--facebook {
+				background-image: url('/icons/facebook.svg');
+			}
+
+			&--telegram {
+				background-image: url('/icons/telegram.svg');
 			}
 		}
 	}
 
-	&__link {
-		@extend %button;
-		border-color: $secondary;
-		color: $secondary;
-		gap: 8px;
+	&__partners {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		gap: 15px;
 
-		&:hover {
-			color: #ffffff;
-		}
-	}
-
-	&__link-wrap {
-		@extend %flex-column;
-		text-align: center;
-		font-size: 10px;
-		line-height: 14px;
-		letter-spacing: .15px;
-
-		&.bold {
-			font-size: 16px;
-			line-height: 16px;
-			letter-spacing: .2px;
-		}
-	}
-
-	&__buttons {
-		@extend %flex-center;
-		gap: 16px;
-	}
-
-	&__providers,
-	&__payments {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		gap: 10px;
-
-		@media (max-width:toEm($mobile)){
-			gap: 0; 
-		}
-	}
-
-	&__provider,
-	&__payment {
-
-	}
-
-	&__text {
-		text-align: center;
-		color: #2A4241;
-		font-size: 10px;
-		line-height: 140%;
-	}
-
-	@media (max-width: 768px) {
-		&__container {
-			grid-template-columns: 1fr;
-		}
-
-		&__section--providers,
-		&__section--payments,
-		&__section--apps {
-			grid-column: span 1;
+		&-icon {
+			height: 40px;
+			opacity: 0.7;
 		}
 	}
 }
 
-.warning {
-	@extend %flex-center;
-	width: 54px;
-	min-width: 54px;
-	padding: 12px;
-	color: #80858F;
-	border: 1px solid #80858F;
+// Responsive
+@media (max-width: toEm($mobile)) {
+	.footer__top {
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+	}
 
-	span {
-		font-weight: 500;
-		line-height: 100%;
+	.footer__nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer__social {
+		justify-content: center;
+	}
+
+	.footer__partners {
+		justify-content: center;
 	}
 }

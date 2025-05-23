@@ -1,0 +1,280 @@
+.rightbar {
+   background-color: transparent;
+   padding: 20px 20px 0 20px;
+   position: fixed;
+   right: 0;
+   max-width: 23.65%;
+   width: 100%;
+   height: max-content;
+	height: 100%;
+   overflow-y: scroll;
+
+   @media (max-width:toEm($sidebarNone)){
+      display: none;
+   }
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100%;
+      overflow-y: scroll;
+      padding-bottom: 140px;
+   }
+
+   &__promo {
+      background-color: $blueColor;
+      border-radius: 12px;
+      padding: 20px 30px;
+      text-align: center;
+      color: $textWhite;
+      background: url('../../../assets/img/bg-rocket.webp') center/cover no-repeat;
+      min-height: 195px;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+
+      &::before {
+         position: absolute;
+         content: '';
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: $blueColor;
+         z-index: -1;
+      }
+
+      &-img {
+         max-width: 100%;
+         height: auto;
+      }
+
+      &-text {
+         margin-top: 10px;
+      }
+   }
+
+   &__bonus-title {
+      font-size: 20px;
+      line-height: 120%;
+      font-weight: 700;
+      color: #ffcc00;
+      text-transform: uppercase;
+   }
+
+   &__bonus-subtitle {
+      margin-top: 15px;
+      font-size: 14px;
+   }
+
+   &__betting {
+      background-color: $mainColor;
+      color: $textBlack;
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__tabs {
+      display: flex;
+      border-bottom: 1px solid $gray;
+      margin-bottom: 10px;
+      text-align: center;
+
+      .rightbar__tab {
+         flex: 1;
+         padding: 8px;
+         background: transparent;
+         border: none;
+         font-weight: bold;
+         cursor: pointer;
+         color: $blueDark;
+
+         &--active {
+            border-bottom: 3px solid $blueLight;
+         }
+      }
+   }
+
+   &__quickbet {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   &__section-title {
+      font-size: 14px;
+      font-weight: bold;
+   }
+
+   &__quick-amounts {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+   }
+
+   &__amount {
+      padding: 6px 12px;
+      border: 1px solid $gray;
+      border-radius: 6px;
+      background: $lightGray;
+      cursor: pointer;
+
+      &--edit {
+         background: $blueLight;
+         color: $textWhite;
+      }
+   }
+
+   &__max {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+   }
+
+   &__toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 18px;
+
+      input {
+         opacity: 0;
+         width: 0;
+         height: 0;
+      }
+
+      .rightbar__slider {
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: $gray;
+         border-radius: 34px;
+         cursor: pointer;
+
+         &::before {
+            content: "";
+            position: absolute;
+            height: 14px;
+            width: 14px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .2s;
+            border-radius: 50%;
+         }
+      }
+
+      input:checked+.rightbar__slider {
+         background-color: $blueLight;
+
+         &::before {
+            transform: translateX(18px);
+         }
+      }
+   }
+
+   &__bet {
+      display: flex;
+      justify-content: space-between;
+      background-color: $lightGray;
+      padding: 8px;
+      border-radius: 6px;
+      font-weight: bold;
+   }
+
+   &__changes {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+   }
+
+   &__submit {
+      background-color: $greenAccent;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      color: $blueDark;
+      text-align: center;
+   }
+
+   &__section {
+      background-color: $blueLight;
+      border-radius: 12px;
+      padding: 10px;
+
+      &--live {
+         background-color: #7a26d1;
+         min-height: 150px;
+      }
+   }
+
+   &__section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      color: $textWhite;
+
+      .rightbar__count {
+         color: $gray;
+         font-weight: normal;
+      }
+
+      .rightbar__link {
+         color: $textWhite;
+         font-size: 13px;
+         text-decoration: underline;
+      }
+   }
+
+   &__games {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+
+      a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: transform .3s ease-in-out;
+         transform: scale(1);
+
+         @media (any-hover: hover){
+            &:hover{
+               transform: scale(1.025);
+            }
+         }
+      }
+   }
+
+   &__game {
+      min-width: 136px;
+      width: 100%;
+      height: 105px;
+      border-radius: 6px;
+   }
+}
+
+// Responsive
+@media (max-width: toEm($mobile)) {
+   .rightbar {
+      width: 100%;
+      padding: 10px;
+   }
+}

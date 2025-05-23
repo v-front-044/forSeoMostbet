@@ -17,7 +17,7 @@ body {
 	line-height: 120%;
 	display: flex;
 	justify-content: center;
-	background: linear-gradient(0deg, #00100E 0%, #00100E) 100%;
+	background-color: $bgColor;
 
 	// Скролл заблоковано
 	[data-fls-scrolllock] & {

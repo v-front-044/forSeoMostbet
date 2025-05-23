@@ -1,34 +1,80 @@
 <header data-fls-header class="header">
 	<div class="header__container">
-		<div class="header__body">
-			<div class="header__left">
-				<a class="header__logo" href="index.html">
-					<img src="@img/logo.png" alt="Logo">
+		<div class="header__block">
+			<a href="#" class="header__download">
+				<span class="header__download-label">STÁHNOUT:</span>
+				<div class="header__download-icons">
+					<i class="header__icon header__icon--android"></i>
+					<i class="header__icon header__icon--apple"></i>
+				</div>
+			</a>
+			
+			<a href="#" class="header__check-button">
+				<img src="@img/icons/check.svg" alt="Check">
+			</a>
+			
+			<div class="header__settings">
+				<a href="#" class="header__settings-button">
+					<img src="@img/icons/settings.svg" alt="Settings">
+					<span>DESETINNÝ</span>
 				</a>
-				<div class="header__menu">
-					<ul class="header__menu-list">
-						<li class="header__menu-item">
-							<a class="header__menu-link" href="/out/1win">
-								<img src="@img/menu/header/icon-1.svg" alt="Menu icon">
-								<span>Promosyonlar</span>
-							</a>
-						</li>
-						<li class="header__menu-item">
-							<a class="header__menu-link" href="/out/1win">
-								<img src="@img/menu/header/icon-2.svg" alt="Menu icon">
-								<span>Turnuvalar</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="header__right">
-				<div class="header__text">Kayıt ol ve ilk yatırımına bonus kazan</div>
-				<div class="header__buttons">
-					<a class="header__button header__button--red" href="/out/1win">Üye ol</a>
-					<a class="header__button header__button--black" href="/out/1win">Giriş yap</a>
-				</div>
+				<span class="header__clock">17:21:22</span>
+				<a class="header__lang" href="#">
+					<img src="@img/lang/cz_flag.svg" alt="Language">
+					<span>CZ</span>
+				</a>
 			</div>
 		</div>
+
+		<div class="header__actions">
+			<a href="#" class="header__money-btn">PENÍZE ZDARMA</a>
+			<a href="#" class="header__offer-btn">NABÍDKY</a>
+		</div>
+
+		<div class="header__auth">
+			<a href="#" class="header__register">ZAREGISTROVAT SE</a>
+			<a href="#" class="header__login">PŘIHLÁSIT SE</a>
+		</div>
+
+		<button class="header__menu-button" id="menuToggleBtn" aria-label="Menu">
+			<span class="header__menu-icon"></span>
+		</button>
+
+		<nav class="header__nav">
+			<a href="index.html"><img src="@img/logo.png" alt="Mostbet" class="header__logo"></a>
+			<ul class="header__menu">
+				<li class="header__menu-item"><a href="#">SPORTY</a></li>
+				<li class="header__menu-item"><a href="#">LIVE</a></li>
+				<li class="header__menu-item"><a href="#">CASINO</a></li>
+				<li class="header__menu-item"><a href="#">LIVE CASINO</a></li>
+				<li class="header__menu-item header__menu-item--highlight">
+					<a href="#"><img src="@img/aviator.svg" alt="Aviator"></a>
+				</li>
+				<li class="header__menu-item header__menu-item--bonus">
+					<a href="#">
+						<img src="@img/icons/cart.svg" alt="Cart">
+						<span>KOUPIT BONUS</span>
+					</a>
+				</li>
+				<li class="header__menu-item"><a href="#">E-SPORTY</a></li>
+				<li class="header__menu-item"><a href="#">VÍCE...</a></li>
+			</ul>
+		</nav>
 	</div>
 </header>
+
+<div class="overlay-menu" id="overlayMenu">
+	<div class="overlay-menu__content">
+		<ul class="overlay-menu__list">
+			<li class="overlay-menu__item overlay-menu__item--active"><a href="#">MOSTBET</a></li>
+			<li class="overlay-menu__item"><a href="#">REGISTRACE A PŘIHLÁŠENÍ</a></li>
+			<li class="overlay-menu__item"><a href="#">MOBILNÍ APLIKACE – MOSTBET APP</a></li>
+			<li class="overlay-menu__item"><a href="#">SÁZKOVÁ SPOLEČNOST</a></li>
+			<li class="overlay-menu__item"><a href="#">SPORTOVNÍ SÁZKY</a></li>
+			<li class="overlay-menu__item"><a href="#">HRY MOSTBET CASINO</a></li>
+			<li class="overlay-menu__item"><a href="#">BONUSY MOSTBET CASINO ČESKO</a></li>
+			<li class="overlay-menu__item"><a href="#">O NÁS</a></li>
+		</ul>
+		<button class="overlay-menu__close" id="menuCloseBtn" aria-label="Zavřít">✕</button>
+	</div>
+</div>
